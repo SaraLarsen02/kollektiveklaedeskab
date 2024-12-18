@@ -5,6 +5,9 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import os from "../assets/images/os_1.webp";
+import Abonnement from "../components/card_abonnement.astro";
+import Forms from "../components/card_forms.astro";
+import Accordion from "../components/accordion.astro";
 ---
 
 <MainLayout title="Titel">
@@ -18,4 +21,8 @@ import os from "../assets/images/os_1.webp";
   <img src="/butik_1.webp" alt="" />
   <h2>vi pråver igen</h2>
   <Image class="" src={os} alt="Blå bue" />
+  <Abonnement />
+  <Forms />
+  <Accordion />
+  <Link />
 </MainLayout>
