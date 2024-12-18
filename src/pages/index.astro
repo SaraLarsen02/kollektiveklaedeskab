@@ -1,28 +1,114 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
+import Abonnement from "../components/card_abonnement.astro";
+import Anmeldelse from "../components/card_anmeldelse.astro";
+import SoMe_large from "../components/some_large.astro";
+import SoMe_small from "../components/some_small.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
-import os from "../assets/images/os_1.webp";
-import Abonnement from "../components/card_abonnement.astro";
-import Forms from "../components/card_forms.astro";
-import Accordion from "../components/accordion.astro";
+import figure_blue from "../assets/images/section_1.svg";
+import large1 from "../assets/images/large_1.webp";
+import Goersom from "../components/goersom.astro";
+import SecondaryLayout from "../layouts/SecondaryLayout.astro";
 ---
 
-<MainLayout title="Titel">
-  <article>
-    <h1>Index overskrift</h1>
-    <Button>Klik!</Button>
-    <p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-    <Image src={thumbsup} alt="" />
-  </article>
-  <h2>Testetstets</h2>
-  <img src="/butik_1.webp" alt="" />
-  <h2>vi pråver igen</h2>
-  <Image class="" src={os} alt="Blå bue" />
-  <Abonnement />
-  <Forms />
-  <Accordion />
-  <Link />
-</MainLayout>
+<MainLayout title="Forside">
+  <article class="">
+    <section class="my-13xl max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto">
+      <h1 class="text-h1_m md:text-h2_d lg:text-h1_d font-display text-brown-800 text-center mb-2xl md:mb-5xl">Byt dit tøj <br /> Forny din stil</h1>
+      <div class="md:flex md:flex-row md:justify-center md:gap-10xl grid justify-items-center gap-m">
+        <Link left="red_l" right="red_r" hover="hover" variant="primary">Sådan gør du</Link>
+        <Link left="red_l" right="red_r" hover="hover" variant="primary">Bliv frivillig</Link>
+      </div>
+    </section>
+    <section class="">
+      <h1 class="text-h1_m font-display text-brown-800 font-bold lg:text-h1_d max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto mb-xl">Vælg dit abonnement</h1>
+      <div class="z-30">
+        <Image class="flip_horisontal w-full -mb-1" src={figure_blue} alt="Blå bue" />
+        <div class="bg-blue-500 h-[900px] md:h-[328px]"></div>
+        <Image class="flip_vertikal w-full -mt-1" src={figure_blue} alt="Blå bue" />
+      </div>
+      <div class="mt-[-900px] md:mt-[-380px] lg:mt-[-500px] max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto grid grid-cols-12 space-y-l md:space-y-0 md:gap-l">
+        <div class="z-50 col-start-1 col-span-12 md:col-start-1 md:col-span-6 lg:col-start-2 lg:col-span-5 xl:col-start-3 xl:col-span-4">
+          <Abonnement url="#" badge="false" type="Basis" pris="199" icon1="check_black.svg" iconalt1="Sort check-ikon" icon2="check_black.svg" iconalt2="Sort check-ikon" icon3="check_black.svg" iconalt3="Sort check-ikon" icon4="cross_red.svg" iconalt4="Rødt kryds-ikon" icon5="cross_red.svg" iconalt5="Rødt kryds-ikon" />
+        </div>
+        <div class="z-50 col-start-1 col-span-12 md:col-start-7 md:col-span-6 lg:col-start-7 lg:col-span-5 xl:col-start-7 xl:col-span-4">
+          <Abonnement url="#" badge="true" type="Plus" pris="299" icon1="check_black.svg" iconalt1="Sort check-ikon" icon2="check_black.svg" iconalt2="Sort check-ikon" icon3="check_black.svg" iconalt3="Sort check-ikon" icon4="check_black.svg" iconalt4="Sort check-ikon" icon5="check_black.svg" iconalt5="Sort check-ikon" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <!-- 5 steps komponent skal være her -->
+    </section>
+
+    <section>
+      <Image class="" src={large1} alt="baggrund med pige i klædeskabet" />
+    </section>
+
+    <section class="my-8xl max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto">
+      <Goersom />
+      <div class="mt-2xl">
+        <Link left="red_l" right="red_r" hover="hover" variant="primary">Find butik</Link>
+      </div>
+    </section>
+    <section class="">
+      <div class="z-30">
+        <Image class="flip_horisontal w-full -mb-1" src={figure_blue} alt="Blå bue" />
+        <div class="bg-blue-500 h-[1800px] md:h-[1800px] lg:h-[550px] xl:h-[450px] 2xl:h-[480px]"></div>
+        <Image class="flip_vertikal w-full -mt-1" src={figure_blue} alt="Blå bue" />
+      </div>
+      <div class="mt-[-1800px] md:mt-[-1800px] lg:mt-[-630px] xl:mt-[-580px] 2xl:mt-[-600px] max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto">
+        <h2 class="text-h2_m font-display font-bold text-neutrals-50 md:text-h2_d text-center mb-xl">Vi deler klædeskab</h2>
+        <div class="z-50 relative grid gap-2xl lg:grid-cols-3">
+          <Anmeldelse
+            url="#"
+            cardimage="anmeldelse_1.webp"
+            cardimagealt="Ung kvinde"
+            overskrift="Sofia, 24 år"
+            underoverskrift="Himmelev, Roskilde"
+            anmeldelse="For mig er Det Kollektive Klædeskab en bæredygtig måde at forny garderoben på. Med et billigt månedligt abonnement kan jeg aflevere tøj og bytte det til nyt. Konceptet fungerer virkelig godt."
+          />
+          <Anmeldelse
+            url="#"
+            cardimage="anmeldelse_2.webp"
+            cardimagealt="Ung kvinde"
+            overskrift="Marie, 20 år"
+            underoverskrift="Nørrebro, København"
+            anmeldelse="For mig er Det Kollektive Klædeskab en bæredygtig måde at forny garderoben på. Med et billigt månedligt abonnement kan jeg aflevere tøj og bytte det til nyt. Konceptet fungerer virkelig godt."
+          />
+          <Anmeldelse
+            url="#"
+            cardimage="anmeldelse_3.webp"
+            cardimagealt="Ung mand"
+            overskrift="Jonas, 27 år"
+            underoverskrift="Vesterbro, København"
+            anmeldelse="For mig er Det Kollektive Klædeskab en bæredygtig måde at forny garderoben på. Med et billigt månedligt abonnement kan jeg aflevere tøj og bytte det til nyt. Konceptet fungerer virkelig godt."
+          />
+        </div>
+      </div>
+    </section>
+    <section class="space-y-l max-w-[20.375rem] md:max-w-[43rem] lg:max-w-[58rem] xl:max-w-[70rem] 2xl:max-w-[87rem] mx-auto">
+      <h2 class="font-display text-h2_m font-bold text-brown-800">Følg os</h2>
+      <div class="grid gap-sm lg:grid-cols-5">
+        <div class="grid gap-sm lg:grid-cols-2 col-span-2">
+          <SoMe_large url="" video="some_large1.mov" videoalt="Video fra socialt medie" icon="icon_instagram.svg" iconalt="Instagram-logo" some="Instagram" />
+          <div class="grid gap-sm grid-cols-2 lg:grid-cols-1">
+            <SoMe_small url="" image="some_1.webp" imagealt="Billede fra socialt medie" icon="icon_instagram.svg" iconalt="Instagram-logo" some="Instagram" />
+            <SoMe_small url="" image="some_2.webp" imagealt="Billede fra socialt medie" icon="icon_tiktok.svg" iconalt="Tiktok-logo" some="TikTok" />
+          </div>
+        </div>
+        <div class="grid gap-sm lg:grid-cols-2 col-span-2">
+          <div class="grid gap-sm grid-cols-2 lg:grid-cols-1">
+            <SoMe_small url="" image="some_3.webp" imagealt="Billede fra socialt medie" icon="icon_tiktok.svg" iconalt="Tiktok-logo" some="TikTok" />
+            <SoMe_small url="" image="some_4.webp" imagealt="Billede fra socialt medie" icon="icon_instagram.svg" iconalt="Instagram-logo" some="Instagram" />
+          </div>
+          <SoMe_large url="" video="some_large2.mov" videoalt="Video fra socialt medie" icon="icon_tiktok.svg" iconalt="Tiktok-logo" some="TikTok" />
+        </div>
+        <div class="grid gap-sm col-span-2 grid-cols-2 lg:grid-cols-1 lg:col-span-1">
+          <SoMe_small url="" image="some_5.webp" imagealt="Billede fra socialt medie" icon="icon_instagram.svg" iconalt="Instagram-logo" some="Instagram" />
+          <SoMe_small url="" image="some_6.webp" imagealt="Billede fra socialt medie" icon="icon_tiktok.svg" iconalt="Tiktok-logo" some="TikTok" />
+        </div>
+      </div>
+    </section>
+  </article></MainLayout
+>
